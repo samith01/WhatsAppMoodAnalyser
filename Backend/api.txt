@@ -1,0 +1,1 @@
+const genAI = new GoogleGenerativeAI("AIzaSyDhK_a7h975PV9g5NMGF5Ac5c9ADM89v1c");
