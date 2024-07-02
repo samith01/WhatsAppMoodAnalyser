@@ -3,8 +3,9 @@ const fs = require("fs");
 const express = require("express");
 const cors = require("cors");
 const { GoogleGenerativeAI } = require("@google/generative-ai");
+require('dotenv').config()
 
-const genAI = new GoogleGenerativeAI("<yourapi>");
+const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY);
 
 const model = genAI.getGenerativeModel({ model: "gemini-pro" });
 
@@ -14,7 +15,6 @@ async function getFromModel(prompt) {
   const result = await model.generateContent(prompt);
   const response =  result.response;
   const text = response.text();
-  console.log(result.response)
   return text;
   }
   catch(e) {
