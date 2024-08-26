@@ -20,7 +20,7 @@ export default function MoodScorePage() {
   const generateAdvice = async () => {
     const { [myName]: excludedData, ...filteredData } = privateMessages;
 
-    await fetch("http://127.0.0.1:3000/generateAdvice", {
+    await fetch("https://b59bdj60-2001.asse.devtunnels.ms/generateAdvice", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -38,14 +38,14 @@ export default function MoodScorePage() {
   const generateOverallMood = async () => {
     let highestMood = null;
     let highestScore = -1;
-  
+
     myEmojiRatings.forEach((mood) => {
       if (mood.score > highestScore) {
         highestScore = mood.score;
         highestMood = mood.emoji;
       }
     });
-  
+
     setoverallMood(highestMood);
   };
 
@@ -72,7 +72,7 @@ export default function MoodScorePage() {
     <div
       style={{
         backgroundColor: "black",
-        height: "120vh",
+        height: "100vh",
         width: "100%",
         display: "flex",
         flexDirection: "column",
@@ -109,8 +109,8 @@ export default function MoodScorePage() {
         </div>
       </div>
 
-      <div style={{ height: "auto", width: "100%" }}>
-        <h1 style={{ color: "white", textAlign: "center", fontSize: "50px" }}>
+      <div style={{ height: "20vh", width: "100%", display: "flex", justifyContent: "center", flexDirection: "column" }}>
+        <h1 style={{ color: "white", textAlign: "center", fontSize: "30px" }}>
           {overallMood ? overallMood : null}
         </h1>
         <h1 style={{ color: "white", textAlign: "center", fontSize: "30px" }}>
@@ -121,7 +121,7 @@ export default function MoodScorePage() {
         style={{
           height: "fit-content",
           width: "80%",
-          margin: 20,
+          // margin: 20,
           borderRadius: 10,
           backgroundColor: "#171717",
           padding: 5,
@@ -133,11 +133,11 @@ export default function MoodScorePage() {
               style={{
                 padding: 20,
                 display: "flex",
-                height: "4vh",
+                height: "2vh",
                 alignItems: "center",
                 justifyContent: "space-evenly",
               }}
-        key={_index}
+              key={_index}
 
             >
               <p style={{ textAlign: "left", fontSize: 30 }}>{mood.emoji}</p>
@@ -163,8 +163,8 @@ export default function MoodScorePage() {
           );
         })}
       </div>
-      <div style={{display:"flex",justifyContent:"center"}}>
-        <h2 style={{ color: "white",textAlign:"center", width:"60%" }}>{advice}</h2>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <h2 style={{ color: "white", textAlign: "center", width: "60%" }}>{advice}</h2>
       </div>
     </div>
   );

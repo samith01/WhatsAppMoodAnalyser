@@ -36,7 +36,7 @@ const PrivateChat = ({currentUser, setShowPrivateChat}) => {
 
   const generateResponse = async () => {
     console.log(privateMessages[currentUser])
-    await fetch("http://127.0.0.1:3000/whatToSend", {
+    await fetch("https://b59bdj60-2001.asse.devtunnels.ms/whatToSend", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

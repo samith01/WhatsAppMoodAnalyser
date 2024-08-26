@@ -124,7 +124,7 @@ const UserContextProvider = ({ children }) => {
   }, [ws]);
 
   const initializeWebSocket = () => {
-    setWs(new WebSocket("ws://127.0.0.1:8000/"));
+    setWs(new WebSocket("wss://b59bdj60-8000.asse.devtunnels.ms/"));
   };
 
   const updateUserEmojis = async (newMessage) => {
@@ -174,7 +174,7 @@ const UserContextProvider = ({ children }) => {
     // }
     // latestMessages.reverse();
 
-    await fetch("http://127.0.0.1:3000/generateEmoji", {
+    await fetch("https://b59bdj60-2001.asse.devtunnels.ms/generateEmoji", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
