@@ -1,8 +1,8 @@
-# WhatsApp Mood Analyzer
+# Chat Mood Analyzer
 
 ## Overview
 
-This project is a WhatsApp Mood Analyzer, which evaluates the mood of users based on their messages. It uses WebSockets for real-time communication and updates. The application consists of a backend server to manage WebSocket connections and a frontend built with React and Vite. The mood is analyzed using emojis and a weighted scoring system.
+This project is a Chat Mood Analyzer, which evaluates the mood of users based on their messages. It uses WebSockets for real-time communication and updates. The application consists of a backend server to manage WebSocket connections and a frontend built with React and Vite. The mood is analyzed using emojis and a weighted scoring system.
 
 ## Features
 
